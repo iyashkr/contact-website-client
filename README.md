@@ -8,7 +8,7 @@
 
 # Contact Web Application
 
-Vercel Link: https://word-frequency-histogram-tau.vercel.app/
+Vercel Link: https://contact-website-client.vercel.app/
 
 ### LogIn Screen
 <p> <img src="https://i.postimg.cc/0jLDZf32/image.png"/> </p>
