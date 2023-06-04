@@ -30,7 +30,7 @@ export default function Home() {
     await signInWithEmailAndPassword(auth, userdata.email.trim(), userdata.password.trim())
       .then(async (userCredential) => {
         const user = userCredential.user;
-        await axios.get(`http://localhost:8080/users/${user.uid}`).then(async (res) => {
+        await axios.get(`https://contacts-app-server-raavs7xmda-el.a.run.app/users/${user.uid}`).then(async (res) => {
           console.log(res)
           if (res?.data?.user !== null) {
             if (res?.data?.user?.emailVerified === false) {
@@ -62,7 +62,7 @@ export default function Home() {
     signInWithPopup(auth, provider)
       .then(async (result) => {
         const user = result.user;
-        await axios.get(`http://localhost:8080/users/${user.uid}`).then(async (res) => {
+        await axios.get(`https://contacts-app-server-raavs7xmda-el.a.run.app/users/${user.uid}`).then(async (res) => {
           console.log(res)
           if (res?.data?.user !== null) {
             if (res?.data?.user?.emailVerified === true) {

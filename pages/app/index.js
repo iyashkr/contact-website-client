@@ -25,7 +25,7 @@ export const getServerSideProps = async ({ req }) => {
   }
 
   const res = await fetch(
-    "http://localhost:8080/contacts/byuser/" + authData?.uid
+    "https://contacts-app-server-raavs7xmda-el.a.run.app/contacts/byuser/" + authData?.uid
   );
   const contacts = await res.json();
   return { props: { contacts, authData } };
@@ -150,7 +150,7 @@ export default function Index({ contacts, authData }) {
       };
 
       let reqOptions = {
-        url: "http://localhost:8080/contacts",
+        url: "https://contacts-app-server-raavs7xmda-el.a.run.app/contacts",
         method: "POST",
         headers: headersList,
         data: bodyContent,
@@ -200,7 +200,7 @@ export default function Index({ contacts, authData }) {
       };
 
       let reqOptions = {
-        url: "http://localhost:8080/contacts/" + activeEditCard?._id,
+        url: "https://contacts-app-server-raavs7xmda-el.a.run.app/contacts/" + activeEditCard?._id,
         method: "PUT",
         headers: headersList,
         data: bodyContent,
@@ -235,7 +235,7 @@ export default function Index({ contacts, authData }) {
       };
 
       let reqOptions = {
-        url: "http://localhost:8080/contacts/" + id,
+        url: "https://contacts-app-server-raavs7xmda-el.a.run.app/contacts/" + id,
         method: "DELETE",
         headers: headersList,
       };

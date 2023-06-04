@@ -35,7 +35,7 @@ export default function VerifyEmail() {
             await axios.post("/api/getuserfromuid", { uid: res.data?.uid }).then(async res => {
                 setuser(res?.data)
                 if (res?.data?.emailVerified === true) {
-                    await axios.request({ url: `http://localhost:8080/users/${res?.data?.uid}`, method: "PUT", headers: { "Accept": "*/*", }, data: { emailVerified: true } }).then(response => {
+                    await axios.request({ url: `https://contacts-app-server-raavs7xmda-el.a.run.app/users/${res?.data?.uid}`, method: "PUT", headers: { "Accept": "*/*", }, data: { emailVerified: true } }).then(response => {
                         cookie.set('auth', JSON.stringify(response?.data?.user), { path: '/' });
                         router.push("/app")
                         return

@@ -69,13 +69,13 @@ export default function Home() {
           id: user.uid,
         };
         await axios
-          .get(`http://localhost:8080/users/${user.uid}`)
+          .get(`https://contacts-app-server-raavs7xmda-el.a.run.app/users/${user.uid}`)
           .then(async (res) => {
             console.log(res.data);
             if (res?.data?.user === null) {
               await axios
                 .request({
-                  url: `http://localhost:8080/users`,
+                  url: `https://contacts-app-server-raavs7xmda-el.a.run.app/users`,
                   method: "POST",
                   headers: { Accept: "*/*" },
                   data: data,
@@ -119,12 +119,12 @@ export default function Home() {
         };
 
         await axios
-          .get(`http://localhost:8080/users/${user.uid}`)
+          .get(`https://contacts-app-server-raavs7xmda-el.a.run.app/users/${user.uid}`)
           .then(async (res) => {
             if (res?.data?.user === null) {
               await axios
                 .request({
-                  url: `http://localhost:8080/users`,
+                  url: `https://contacts-app-server-raavs7xmda-el.a.run.app/users`,
                   method: "POST",
                   headers: { Accept: "*/*" },
                   data: data,
